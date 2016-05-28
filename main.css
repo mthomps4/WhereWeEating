@@ -1,0 +1,25 @@
+*{
+font-family: 'Open Sans', sans-serif;
+}
+
+body{
+  margin:0;
+  padding:0;
+  background-color:black;
+}
+
+#container{
+  margin:auto;
+  background-color:#444;
+  border: 4px solid white;
+  height:500px;
+  width: 500px;
+}
+
+h1{
+  font-size:3em;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  padding:10px;
+}
