@@ -68,7 +68,6 @@ h1{
 #arrow {
   height:100px;
   width:100px;
-	position: relative;
 	background: url(images/Arrow-logo.png);
   background-repeat: no-repeat;
   background-position: center;
