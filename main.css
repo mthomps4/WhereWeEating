@@ -32,47 +32,12 @@ h1{
   float:left;
   width:40%;
 }
+
 .box2{
   float:right;
   width:45%;
 }
 
-#BoxContainer{
-  background-color:#444;
-  border: 4px solid white;
-  height:400px;
-  width: 400px;
-  margin-bottom:5%;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  position:relative;
-}
-
-
-#spin{
-  padding:5px 10px;
-  background-color:#00D;
-  font-weight: bold;
-  color: white;
-  position:absolute;
-  bottom:10px;
-  right:10px;
-}
-
-#spin:hover{
-  background-color:#00A;
-}
-
-#arrow {
-  height:100px;
-  width:100px;
-	background: url(images/Arrow-logo.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
 
 #listItmes{
   background-color:#444;
