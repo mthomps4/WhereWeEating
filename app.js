@@ -19,6 +19,15 @@ addButton.onclick = function (){
     sliceItem.innerText = taskInput.value;
     sliceHolder.appendChild(sliceItem);
 
+
+    var items = sliceHolder.getElementsByTagName("li");
+    for (var i = 0; i < items.length; ++i) {
+            var degree = 360/items.length;
+            console.log(degree);
+            // items[i].style.webkitTransform = 'rotate(' + degree + 'deg)';
+        }
+
+
     taskInput.value = ""; //resets User Input back to ""
 
     deleteButton.onclick = function(){ //Delete "this" li element
@@ -44,4 +53,5 @@ tl.to(spinButton,1,{scale:1.3}, "-=1")
 
 spinButton.onclick = function(){
   tl.play(0);
+
 };

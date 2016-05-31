@@ -71,6 +71,8 @@
   /*display:flex;
   justify-content: center;
   align-items: center;*/
+
+  transform:translate(200px);
 }
 
 #circle li:nth-child(1) {
