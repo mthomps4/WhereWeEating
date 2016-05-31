@@ -30,3 +30,18 @@ addButton.onclick = function (){
 };
 
 //******** Create Pie Chart from li elements *************
+
+//******** Spin Button Animation *************
+var spinButton = document.getElementById("spin");
+
+//Animation Sequence
+var tl = new TimelineMax({paused:true});
+tl.to(spinButton ,2,{rotation:2160});
+tl.to(spinButton,1,{scale:.5}, "-=2");
+tl.to(spinButton,1,{scale:1.3}, "-=1")
+
+
+
+spinButton.onclick = function(){
+  tl.play(0);
+};
