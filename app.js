@@ -56,11 +56,14 @@ addButton.onclick = function (){
             degree = 360/circleArray.length;
             }
 
-console.log(degree);
 
-sliceArray.forEach(function(index){
-index.style.transform = "rotateZ(" + degree*index + "deg), rotateX("+ degree*index +"deg)";
-});
+for(var i=0; i<sliceArray.length; i++){
+  var nth = sliceArray[i];
+  console.log(nth);
+  nth.style.webkitTransform = "rotateZ("+ degree*i +"deg) translate(200px)";
+}
+
+// , rotateZ(" + degree + "deg), rotateX("+ degree +"deg)"
 
 };//Ends addButton.onclick funciton
 
