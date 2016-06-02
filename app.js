@@ -48,6 +48,12 @@ addButton.onclick = function (){
           if(circleArray.length>0){
               degree = 360/circleArray.length;
             }else(degree=0)
+
+            for(var i=0; i<sliceArray.length; i++){
+              var nth = sliceArray[i];
+              console.log(nth);
+              nth.style.webkitTransform = "rotateZ("+ degree*i +"deg) translate(200px)";
+            }
       }//End deleteButton function
 
 
