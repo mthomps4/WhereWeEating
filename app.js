@@ -4,6 +4,8 @@ var listHolder = document.getElementById("restList"); //UL List
 var taskInput = document.getElementById("new-place"); //new-task
 var circleArray = [];
 var degree = 0;
+var sliceArray = [];
+
 
 addButton.onclick = function (){
 //******** Creates <li> of <ol> on addButton ****
@@ -24,7 +26,7 @@ addButton.onclick = function (){
 
 //Adds to Array for future funciton calls
     circleArray.push(listItem); //Using list item enables deleteButton option
-
+    sliceArray.push(sliceItem);
 
 //Task Input Focus and Reset
     taskInput.value = ""; //resets User Input back to ""
@@ -40,6 +42,8 @@ addButton.onclick = function (){
       ul.removeChild(item);
       sliceHolder.removeChild(sliceItem);
       circleArray.splice(i, 1);
+      var x = sliceArray.indexOf(item);
+      sliceArray.splice(i,1);
       //Global Degree is updated based on deleted Array Length
           if(circleArray.length>0){
               degree = 360/circleArray.length;
@@ -52,9 +56,11 @@ addButton.onclick = function (){
             degree = 360/circleArray.length;
             }
 
+console.log(degree);
 
-
-
+sliceArray.forEach(function(index){
+index.style.transform = "rotateZ(" + degree*index + "deg), rotateX("+ degree*index +"deg)";
+});
 
 };//Ends addButton.onclick funciton
 
@@ -71,6 +77,11 @@ var circleLI = document.getElementById("circle").getElementsByTagName("li");
 //Use a forEach loop to append Degree
 
 
+// sliceArray.forEach(function(index){
+//   index.style.transform = "rotateZ(" + degree*index + "deg), rotateX("+ degree*index +"deg)";
+//   // console.log(index);
+//   // console.log(degree);
+//   });
 
 
 
