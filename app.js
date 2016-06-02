@@ -26,8 +26,9 @@ addButton.onclick = function (){
 //******** Creates <li> inside #circle <ul> on addButton ****
     var sliceHolder = document.getElementById("circle"); // circle UL list
     var sliceItem = document.createElement("li");
-    sliceItem.innerHTML = taskInput.value;
     sliceHolder.appendChild(sliceItem);
+    sliceItem.innerHTML = taskInput.value;
+
 
     //Random Pastel RGB Background for slice Items
     var RGB = 'rgb(' + (Math.floor(Math.random() * 157)+100) + ',' + (Math.floor(Math.random() * 157)+100) + ',' + (Math.floor(Math.random() * 157)+100) + ')';
@@ -75,7 +76,7 @@ addButton.onclick = function (){
       for(var i=0; i<sliceArray.length; i++){
         var nth = sliceArray[i];
         nth.style.webkitTransform = "rotateZ("+ degree*i +"deg) translate(200px)";
-//If too many list items... change size to keep from overlapping. 
+//If too many list items... change size to keep from overlapping.
         if(sliceArray.length > 14){
           var nth = sliceArray[i];
           nth.style.width = "40px";
@@ -120,14 +121,46 @@ var spinButton = document.getElementById("spin");
       var tl = new TimelineMax({paused:true});
       tl.to(spinButton ,2,{rotation:2160});
       tl.to(spinButton,1,{scale:.5}, "-=2");
-      tl.to(spinButton,1,{scale:1.3}, "-=1");
+      tl.to(spinButton,1,{scale:1}, "-=1");
+      // tl.to(spinButton,1,{rotation:answer});
+
       //var random# between 1 and list length
       // answer = random# * degrees
       // tl.to rotateX:answer
 
 spinButton.onclick = function(){
-  tl.play(0);//plays from start
-  //Overlay body with lightbox.
-  //Show Answer in Overlay.
-  console.log(degree);
+  var randomItemIndex = (Math.floor(Math.random() * circleArray.length));
+  var answerD = degree * randomItemIndex;
+
+  var x = randomItemIndex;
+  var y = sliceArray[x];
+  var z = y.innerHTML;
+
+  var answerDiv = document.getElementById("answer");
+  if (z == "") {answerDiv.innerHTML = "'Blank Entry'";}
+  else{answerDiv.innerHTML = z;}
+
+  function displayAnswer(){
+    answerDiv.style.opacity = ".9";
+    answerDiv.style.width = "100vw";
+    answerDiv.style.height = "100vh";
+
+    answerDiv.onclick = function(){
+      answerDiv.style.opacity = "0";
+      answerDiv.style.width = "0px";
+      answerDiv.style.height = "0px";
+    };
+  }
+
+  //Animation Sequence
+  var tl = new TimelineMax({paused:true,onComplete:displayAnswer});
+  tl.to(spinButton ,2,{rotation:2160});
+  tl.to(spinButton,1,{scale:.5}, "-=2");
+  tl.to(spinButton,1,{scale:1}, "-=1");
+  tl.to(spinButton,1,{rotation:answerD},"-=1");
+  tl.play(0);
+
+  answerD = 0;
+  console.log(z)
+  return z;
 };
