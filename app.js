@@ -6,6 +6,11 @@ var circleArray = [];
 var degree = 0;
 var sliceArray = [];
 
+//Adds new item when "enter" pressed.
+taskInput.addEventListener("keyup",function(event){
+  event.preventDefault();
+  if (event.keyCode == 13){addButton.click();}
+});
 
 addButton.onclick = function (){
 //******** Creates <li> of <ol> on addButton ****
@@ -23,6 +28,11 @@ addButton.onclick = function (){
     var sliceItem = document.createElement("li");
     sliceItem.innerHTML = taskInput.value;
     sliceHolder.appendChild(sliceItem);
+
+    //Random Pastel RGB Background for slice Items
+    var RGB = 'rgb(' + (Math.floor(Math.random() * 157)+100) + ',' + (Math.floor(Math.random() * 157)+100) + ',' + (Math.floor(Math.random() * 157)+100) + ')';
+    // console.log(RGB);
+    sliceItem.style.backgroundColor = RGB;
 
 //Adds to Array for future funciton calls
     circleArray.push(listItem); //Using list item enables deleteButton option
@@ -48,10 +58,9 @@ addButton.onclick = function (){
           if(circleArray.length>0){
               degree = 360/circleArray.length;
             }else(degree=0)
-
+      //Deletes and reEvaluates degree rotation for list elements
             for(var i=0; i<sliceArray.length; i++){
               var nth = sliceArray[i];
-              console.log(nth);
               nth.style.webkitTransform = "rotateZ("+ degree*i +"deg) translate(200px)";
             }
       }//End deleteButton function
@@ -62,14 +71,25 @@ addButton.onclick = function (){
             degree = 360/circleArray.length;
             }
 
+//sets Degree of rotation forEach list item.
+      for(var i=0; i<sliceArray.length; i++){
+        var nth = sliceArray[i];
+        nth.style.webkitTransform = "rotateZ("+ degree*i +"deg) translate(200px)";
+//If too many list items... change size to keep from overlapping. 
+        if(sliceArray.length > 14){
+          var nth = sliceArray[i];
+          nth.style.width = "40px";
+          nth.style.height = "40px";
+          nth.style.margin = "-20px";
+        }
 
-for(var i=0; i<sliceArray.length; i++){
-  var nth = sliceArray[i];
-  console.log(nth);
-  nth.style.webkitTransform = "rotateZ("+ degree*i +"deg) translate(200px)";
-}
-
-// , rotateZ(" + degree + "deg), rotateX("+ degree +"deg)"
+        if(sliceArray.length > 34){
+          var nth = sliceArray[i];
+          nth.style.width = "25px";
+          nth.style.height = "25px";
+          nth.style.margin = "-12px";
+        }
+      }
 
 };//Ends addButton.onclick funciton
 

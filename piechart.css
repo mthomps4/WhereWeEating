@@ -66,66 +66,25 @@
 
 
 #circle li {
-  margin: -12px;
-  width:25px;
-  height: 25px;
+  margin: -40px;
+  width:80px;
+  height: 80px;
   position:absolute;
   top:50%;
   left:50%;
   display:block;
-
   background-color:blue;
   text-align: center;
   border-radius: 50%;
   color:white;
   overflow:hidden;
-  /*display:flex;
+
+  display:flex;
   justify-content: center;
-  align-items: center;*/
-
-  /*transform:translate(200px); /*Moves li to outside of circle*/*/
-}
-/*
-#circle li:nth-child(1) {
-  transform: translate(200px);
+  align-items: center;
 }
 
+/* Sample Degree Transform for Javascript Reference
 #circle li:nth-child(2) {
   transform: rotateZ(45deg) translate(200px);
 }
-
-#circle li:nth-child(3) {
-  transform: rotateZ(90deg) translate(200px);
-}
-
-#circle li:nth-child(4) {
-  transform: rotateZ(135deg) translate(200px);
-}
-
-
-#circle li:nth-child(5) {
-  transform: rotateZ(180deg) translate(200px);
-}
-
-#circle li:nth-child(6) {
-  transform: rotateZ(225deg) translate(200px);
-}
-
-#circle li:nth-child(7) {
-  transform: rotateZ(270deg) translate(200px);
-}
-
-#circle li:nth-child(8) {
-  transform: rotateZ(315deg) translate(200px);
-}
-*/
-
-
-/*
-.circle-container img { display: block; width: 100%; }
-.deg0 { transform: translate(14em); } /* 12em = half the width of the wrapper */*/
-/*.deg45 { transform: rotate(45deg) translate(12em) rotate(-45deg); }
-.deg135 { transform: rotate(135deg) translate(12em) rotate(-135deg); }
-.deg180 { transform: translate(-12em); }
-.deg225 { transform: rotate(225deg) translate(12em) rotate(-225deg); }
-.deg315 { transform: rotate(315deg) translate(12em) rotate(-315deg); }*/
