@@ -1,8 +1,10 @@
-
-npm start
-
 # WhereWeEating
 App uses input of locations and a random spinner to determine the never ending question of "What's for Dinner?"
+
+#Run App
+- npm install (express node modules)
+- npm start 
+
 
 #Breakdown
 - Create spin and arrow functions animations
