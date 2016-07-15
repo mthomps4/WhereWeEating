@@ -85,6 +85,10 @@ display:flex;
 flex-direction: column;
 }
 
+ol{
+  list-style: none;
+}
+
 #restList li {
   margin-bottom:5px;
   background-color:#607D8B;
