@@ -19,8 +19,8 @@ App uses input of locations and a random spinner to determine the never ending q
 - Div overlay
 - Congrats ... Looks like it really is Taco Tuesday!
 
-#####Application
+####Application
 ![desktopimage](https://cloud.githubusercontent.com/assets/17518011/16885178/5c3c6d68-4a9b-11e6-9519-3fc8fe9b9545.PNG)
 
-#####Overlay
+####Overlay
 ![overlay](https://cloud.githubusercontent.com/assets/17518011/16885385/49a1d3c2-4a9c-11e6-9ed1-47f0f34cebc0.PNG)
